@@ -1,0 +1,10 @@
+sys
+os
+re
+speech_recognition
+transformers
+spacy
+PyQt5
+tensorflow
+torch
+emoji==0.6.0
