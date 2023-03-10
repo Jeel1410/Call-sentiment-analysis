@@ -19,7 +19,6 @@ pip install emoji==0.6.0
 pip install PyQt5
 pip install tensorflow
 pip install torch 
-
 ```
 ## USAGE
 
