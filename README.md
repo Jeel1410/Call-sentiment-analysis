@@ -35,7 +35,7 @@ Please make sure to update tests as appropriate
 
 ***
 
-&copy; Copyrights Claimed by Jeel patel and team ! 
+&copy; Copyrights Claimed by Jeel Patel and Team ! 
 
 
 
