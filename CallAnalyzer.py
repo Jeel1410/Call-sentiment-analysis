@@ -4,7 +4,9 @@ import re
 import speech_recognition as sr
 from transformers import pipeline
 import spacy
-from PyQt5.QtWidgets import QApplication, QWidget, QFileDialog, QPushButton, QTextEdit, QLabel, QGridLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QFileDialog, QPushButton, QTextEdit, QGridLayout
+
+
 class AudioAnalysis(QWidget):
 
     def __init__(self):
@@ -51,7 +53,8 @@ class AudioAnalysis(QWidget):
     def get_audio_file(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
-        file_name, _ = QFileDialog.getOpenFileName(self, "Select Audio File", "", "Audio Files (*.wav *.mp3)", options=options)
+        file_name, _ = QFileDialog.getOpenFileName(self, "Select Audio File", "", "Audio Files (*.wav *.mp3)",
+                                                   options=options)
         if file_name:
             file_name = os.path.basename(file_name)
             self.browse_btn.setText(file_name)
@@ -66,6 +69,8 @@ class AudioAnalysis(QWidget):
             sentiment_analysis_pipeline = pipeline(model='federicopascual/finetuning-sentiment-model-3000-samples')
             r = sr.Recognizer()
             try:
+                # Print the file name for debugging
+                print("File name:", file_name)
                 with sr.AudioFile(file_name) as source:
                     audio_data = r.record(source)
                     text = r.recognize_google(audio_data)
@@ -93,7 +98,7 @@ class AudioAnalysis(QWidget):
             analysis[0]['label'] = 'negative'
 
         return analysis, sentence
-    
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
