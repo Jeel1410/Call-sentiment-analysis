@@ -18,7 +18,8 @@ pip install spacy
 pip install emoji==0.6.0
 pip install PyQt5
 pip install tensorflow
-pip install torch 
+pip install torch
+python -m spacy download en_core_web_sm
 ```
 ## USAGE
 
